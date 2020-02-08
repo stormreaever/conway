@@ -34,6 +34,8 @@ void loop() {
       Serial.print((int)e.bit.KEY);
       Serial.println(" pressed");
       keystates[e.bit.KEY] = !keystates[e.bit.KEY];
+
+      changeColor();
     }
   }
 
@@ -70,8 +72,6 @@ void changeColor() {
 
 void updateConway() {
   if (currentMillis - previousConwayMillis >= CONWAY_INTERVAL) {
-
-    changeColor();
 
     if ( gridIsEmpty() ) {
       seedConway();
