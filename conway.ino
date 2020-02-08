@@ -1,6 +1,6 @@
 #include "Adafruit_NeoTrellisM4.h"
 
-#define CONWAY_INTERVAL 1500
+#define CONWAY_INTERVAL 1000
 
 unsigned long currentMillis = 0;
 unsigned long previousConwayMillis = 0;
