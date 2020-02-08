@@ -80,6 +80,7 @@ void updateConway() {
 
     if ( gridIsEmpty() ) {
       seedConway();
+      changeColor();
     } else {
       stepConway();
     }
