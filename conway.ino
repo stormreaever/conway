@@ -1,6 +1,6 @@
 #include "Adafruit_NeoTrellisM4.h"
 
-#define CONWAY_INTERVAL 1000
+#define CONWAY_INTERVAL 800
 
 unsigned long currentMillis = 0;
 unsigned long previousConwayMillis = 0;
@@ -18,6 +18,8 @@ void setup() {
   trellis.begin();
   Serial.println("CONWAY");
 
+  // set up a color
+  changeColor();
   // fill in keystates with random values
   seedConway();
 }
@@ -42,8 +44,6 @@ void loop() {
 
   updateConway();
   renderLights();
-
-  delay(10);
 }
 
 void renderLights() {
