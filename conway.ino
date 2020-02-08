@@ -1,6 +1,6 @@
 #include "Adafruit_NeoTrellisM4.h"
 
-#define CONWAY_INTERVAL 1000
+#define CONWAY_INTERVAL 1500
 
 unsigned long currentMillis = 0;
 unsigned long previousConwayMillis = 0;
@@ -36,6 +36,7 @@ void loop() {
       keystates[e.bit.KEY] = !keystates[e.bit.KEY];
 
       changeColor();
+      resetTimer();
     }
   }
 
@@ -68,6 +69,10 @@ int randomColor() {
 
 void changeColor() {
   stepColor = randomColor();
+}
+
+void resetTimer() {
+  previousConwayMillis = currentMillis - 1;
 }
 
 void updateConway() {
